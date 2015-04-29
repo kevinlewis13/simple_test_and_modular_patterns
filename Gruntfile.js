@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
     jshint: {
@@ -36,6 +37,11 @@ module.exports = function(grunt) {
         ui: 'bdd',
         reporter: 'tap'
       }
+    },
+
+    watch: {
+      files: ['<%= jshint.dev.src %>'],
+      tasks: ['test_suite']
     }
   });
 
