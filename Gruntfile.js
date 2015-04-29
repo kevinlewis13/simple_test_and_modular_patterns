@@ -11,16 +11,8 @@ module.exports = function(grunt) {
         src: ['Gruntfile.js', 'cheerio.js', 'test/**/*.js']
       },
 
-      options : {
-        node: true,
-        globals : {
-          describe: true,
-          it: true,
-          before: true,
-          after: true,
-          beforeEach: true,
-          afterEach: true
-        }
+      options: {
+        jshintrc: true
       }
     },
 
@@ -40,7 +32,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ['<%= jshint.dev.src %>'],
+      files: ['<%= jshint.dev.src %>', '.jshintrc'],
       tasks: ['test_suite']
     }
   });
